@@ -1,22 +1,22 @@
 import ComposableArchitecture
 
 struct RootState {
-  var productListState = ProductListState()
+    var productListState = ProductListState()
 }
 
 enum RootAction {
-  case productListAction(ProductListAction)
+    case productListAction(ProductListAction)
 }
 
 struct RootEnvironment { }
 
 let rootReducer = Reducer<
-  RootState,
-  RootAction,
-  SystemEnvironment<RootEnvironment>
+    RootState,
+    RootAction,
+    SystemEnvironment<RootEnvironment>
 >.combine(
-  productReducer.pullback(
-    state: \.productListState,
-    action: /RootAction.productListAction,
-    environment: { _ in .live(environment: ProductListEnvironment(productListRequest: productListEffect)) }))
+    productReducer.pullback(
+        state: \.productListState,
+        action: /RootAction.productListAction,
+        environment: { _ in .live(environment: ProductListEnvironment(productListRequest: productListEffect)) }))
 

@@ -25,6 +25,9 @@ struct ProductListView: View {
                 }
                 Text("Select an item")
             }
+            .onAppear {
+                viewStore.send(.onAppear)
+            }
         }
     }
     
