@@ -7,13 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0ACC3519272F94D400BA9FE0 /* adidas_challengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC3518272F94D400BA9FE0 /* adidas_challengeApp.swift */; };
-		0ACC351B272F94D400BA9FE0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC351A272F94D400BA9FE0 /* ContentView.swift */; };
+		0ACC3519272F94D400BA9FE0 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC3518272F94D400BA9FE0 /* AppMain.swift */; };
 		0ACC351D272F94D700BA9FE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ACC351C272F94D700BA9FE0 /* Assets.xcassets */; };
 		0ACC3520272F94D700BA9FE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ACC351F272F94D700BA9FE0 /* Preview Assets.xcassets */; };
 		0ACC352A272F94D800BA9FE0 /* adidas_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC3529272F94D800BA9FE0 /* adidas_challengeTests.swift */; };
 		0ACC3534272F94D800BA9FE0 /* adidas_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC3533272F94D800BA9FE0 /* adidas_challengeUITests.swift */; };
 		0ACC3536272F94D800BA9FE0 /* adidas_challengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC3535272F94D800BA9FE0 /* adidas_challengeUITestsLaunchTests.swift */; };
+		0ACC3544272F976000BA9FE0 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 0ACC3543272F976000BA9FE0 /* ComposableArchitecture */; };
+		0ACC3547272FB42B00BA9FE0 /* ProductListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC3546272FB42B00BA9FE0 /* ProductListFeature.swift */; };
+		0ACC3549272FB4A200BA9FE0 /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC3548272FB4A200BA9FE0 /* ProductListView.swift */; };
+		0ACC354B272FB4BC00BA9FE0 /* ProductEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC354A272FB4BC00BA9FE0 /* ProductEffects.swift */; };
+		0ACC354D272FB4CB00BA9FE0 /* ProductListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC354C272FB4CB00BA9FE0 /* ProductListModel.swift */; };
+		0ACC3550272FB7CE00BA9FE0 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC354F272FB7CE00BA9FE0 /* APIError.swift */; };
+		0ACC3552272FB7EA00BA9FE0 /* SystemEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC3551272FB7EA00BA9FE0 /* SystemEnvironment.swift */; };
+		0ACC3555272FBED000BA9FE0 /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC3554272FBED000BA9FE0 /* ProductListCell.swift */; };
+		0ACC3558272FC8DF00BA9FE0 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC3557272FC8DF00BA9FE0 /* RootView.swift */; };
+		0ACC355A272FC90500BA9FE0 /* RootFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC3559272FC90500BA9FE0 /* RootFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +44,7 @@
 
 /* Begin PBXFileReference section */
 		0ACC3515272F94D400BA9FE0 /* adidas-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "adidas-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0ACC3518272F94D400BA9FE0 /* adidas_challengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adidas_challengeApp.swift; sourceTree = "<group>"; };
-		0ACC351A272F94D400BA9FE0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0ACC3518272F94D400BA9FE0 /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
 		0ACC351C272F94D700BA9FE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0ACC351F272F94D700BA9FE0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0ACC3525272F94D800BA9FE0 /* adidas-challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "adidas-challengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +52,15 @@
 		0ACC352F272F94D800BA9FE0 /* adidas-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "adidas-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ACC3533272F94D800BA9FE0 /* adidas_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adidas_challengeUITests.swift; sourceTree = "<group>"; };
 		0ACC3535272F94D800BA9FE0 /* adidas_challengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adidas_challengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0ACC3546272FB42B00BA9FE0 /* ProductListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListFeature.swift; sourceTree = "<group>"; };
+		0ACC3548272FB4A200BA9FE0 /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
+		0ACC354A272FB4BC00BA9FE0 /* ProductEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEffects.swift; sourceTree = "<group>"; };
+		0ACC354C272FB4CB00BA9FE0 /* ProductListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListModel.swift; sourceTree = "<group>"; };
+		0ACC354F272FB7CE00BA9FE0 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		0ACC3551272FB7EA00BA9FE0 /* SystemEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemEnvironment.swift; sourceTree = "<group>"; };
+		0ACC3554272FBED000BA9FE0 /* ProductListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
+		0ACC3557272FC8DF00BA9FE0 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		0ACC3559272FC90500BA9FE0 /* RootFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ACC3544272F976000BA9FE0 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,8 +112,10 @@
 		0ACC3517272F94D400BA9FE0 /* adidas-challenge */ = {
 			isa = PBXGroup;
 			children = (
-				0ACC3518272F94D400BA9FE0 /* adidas_challengeApp.swift */,
-				0ACC351A272F94D400BA9FE0 /* ContentView.swift */,
+				0ACC3518272F94D400BA9FE0 /* AppMain.swift */,
+				0ACC3556272FC8C600BA9FE0 /* Root */,
+				0ACC354E272FB7B900BA9FE0 /* Shared */,
+				0ACC3545272FB3E700BA9FE0 /* Products */,
 				0ACC351C272F94D700BA9FE0 /* Assets.xcassets */,
 				0ACC351E272F94D700BA9FE0 /* Preview Content */,
 			);
@@ -127,6 +147,44 @@
 			path = "adidas-challengeUITests";
 			sourceTree = "<group>";
 		};
+		0ACC3545272FB3E700BA9FE0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0ACC3553272FBE8000BA9FE0 /* ViewComponents */,
+				0ACC3546272FB42B00BA9FE0 /* ProductListFeature.swift */,
+				0ACC3548272FB4A200BA9FE0 /* ProductListView.swift */,
+				0ACC354A272FB4BC00BA9FE0 /* ProductEffects.swift */,
+				0ACC354C272FB4CB00BA9FE0 /* ProductListModel.swift */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		0ACC354E272FB7B900BA9FE0 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				0ACC354F272FB7CE00BA9FE0 /* APIError.swift */,
+				0ACC3551272FB7EA00BA9FE0 /* SystemEnvironment.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		0ACC3553272FBE8000BA9FE0 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				0ACC3554272FBED000BA9FE0 /* ProductListCell.swift */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
+		0ACC3556272FC8C600BA9FE0 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				0ACC3557272FC8DF00BA9FE0 /* RootView.swift */,
+				0ACC3559272FC90500BA9FE0 /* RootFeature.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +201,9 @@
 			dependencies = (
 			);
 			name = "adidas-challenge";
+			packageProductDependencies = (
+				0ACC3543272F976000BA9FE0 /* ComposableArchitecture */,
+			);
 			productName = "adidas-challenge";
 			productReference = 0ACC3515272F94D400BA9FE0 /* adidas-challenge.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +276,9 @@
 				Base,
 			);
 			mainGroup = 0ACC350C272F94D400BA9FE0;
+			packageReferences = (
+				0ACC3542272F976000BA9FE0 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 0ACC3516272F94D400BA9FE0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,8 +321,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0ACC351B272F94D400BA9FE0 /* ContentView.swift in Sources */,
-				0ACC3519272F94D400BA9FE0 /* adidas_challengeApp.swift in Sources */,
+				0ACC3549272FB4A200BA9FE0 /* ProductListView.swift in Sources */,
+				0ACC354D272FB4CB00BA9FE0 /* ProductListModel.swift in Sources */,
+				0ACC3555272FBED000BA9FE0 /* ProductListCell.swift in Sources */,
+				0ACC3558272FC8DF00BA9FE0 /* RootView.swift in Sources */,
+				0ACC355A272FC90500BA9FE0 /* RootFeature.swift in Sources */,
+				0ACC354B272FB4BC00BA9FE0 /* ProductEffects.swift in Sources */,
+				0ACC3552272FB7EA00BA9FE0 /* SystemEnvironment.swift in Sources */,
+				0ACC3519272F94D400BA9FE0 /* AppMain.swift in Sources */,
+				0ACC3547272FB42B00BA9FE0 /* ProductListFeature.swift in Sources */,
+				0ACC3550272FB7CE00BA9FE0 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,7 +499,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,7 +529,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -480,7 +552,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W3KPPQ5W7Z;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -505,7 +577,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W3KPPQ5W7Z;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -607,6 +679,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0ACC3542272F976000BA9FE0 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0ACC3543272F976000BA9FE0 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0ACC3542272F976000BA9FE0 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0ACC350D272F94D400BA9FE0 /* Project object */;
 }
