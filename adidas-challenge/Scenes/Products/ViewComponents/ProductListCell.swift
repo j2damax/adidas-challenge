@@ -1,10 +1,10 @@
 import SwiftUI
 
 struct ProductsListCell: View {
-    private let data: ProductListModel
+    private let data: Product
 
     init(
-        data: ProductListModel
+        data: Product
     ) {
         self.data = data
     }
@@ -41,7 +41,7 @@ struct ProductsListCell: View {
 
 struct ProductsListCell_Previews: PreviewProvider {
     static var previews: some View {
-        let dummyProduct = ProductListModel(
+        let dummyProduct = Product(
             id: "1",
             name: "Dummy Product",
             description: "This is a dummy product without any real information",

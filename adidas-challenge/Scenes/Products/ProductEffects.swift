@@ -1,7 +1,7 @@
 import Foundation
 import ComposableArchitecture
 
-func productListEffect(decoder: JSONDecoder) -> Effect<[ProductListModel], APIError> {
+func productListEffect(decoder: JSONDecoder) -> Effect<[Product], APIError> {
     guard let url = URL(string: "http://localhost:3001/product") else {
         fatalError("Error on creating url")
     }
@@ -10,13 +10,13 @@ func productListEffect(decoder: JSONDecoder) -> Effect<[ProductListModel], APIEr
         .map { data, _ in
             data
         }
-        .decode(type: [ProductListModel].self, decoder: decoder)
+        .decode(type: [Product].self, decoder: decoder)
         .mapError { _ in APIError.decodingError }
         .eraseToEffect()
 }
 
-func dummyProductListEffect(decoder: JSONDecoder) -> Effect<[ProductListModel], APIError> {
-    let dummyProduct = [ProductListModel(
+func dummyProductListEffect(decoder: JSONDecoder) -> Effect<[Product], APIError> {
+    let dummyProduct = [Product(
         id: "1",
         name: "Dummy Product",
         description: "This is a dummy product without any real information",

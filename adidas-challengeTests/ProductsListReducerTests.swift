@@ -7,9 +7,9 @@ class ProductsListReducerTests: XCTestCase {
     
     let testScheduler = DispatchQueue.test
     
-    var testProductList: [ProductListModel] {
+    var testProductList: [Product] {
       [
-        ProductListModel(
+        Product(
             id: "1",
             name: "Dummy Product",
             description: "This is a dummy product without any real information",
