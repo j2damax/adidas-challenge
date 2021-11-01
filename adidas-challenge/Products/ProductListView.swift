@@ -38,7 +38,7 @@ struct ProductListView_Previews: PreviewProvider {
         ProductListView(
             store: Store(
                 initialState: ProductListState(),
-                reducer: productReducer,
+                reducer: productListReducer,
                 environment: .dev(environment: ProductListEnvironment(productListRequest: dummyProductListEffect))))
     }
 }

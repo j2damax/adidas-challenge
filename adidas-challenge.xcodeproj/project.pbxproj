@@ -10,7 +10,6 @@
 		0ACC3519272F94D400BA9FE0 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC3518272F94D400BA9FE0 /* AppMain.swift */; };
 		0ACC351D272F94D700BA9FE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ACC351C272F94D700BA9FE0 /* Assets.xcassets */; };
 		0ACC3520272F94D700BA9FE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ACC351F272F94D700BA9FE0 /* Preview Assets.xcassets */; };
-		0ACC352A272F94D800BA9FE0 /* adidas_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC3529272F94D800BA9FE0 /* adidas_challengeTests.swift */; };
 		0ACC3534272F94D800BA9FE0 /* adidas_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC3533272F94D800BA9FE0 /* adidas_challengeUITests.swift */; };
 		0ACC3536272F94D800BA9FE0 /* adidas_challengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC3535272F94D800BA9FE0 /* adidas_challengeUITestsLaunchTests.swift */; };
 		0ACC3544272F976000BA9FE0 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 0ACC3543272F976000BA9FE0 /* ComposableArchitecture */; };
@@ -23,6 +22,8 @@
 		0ACC3555272FBED000BA9FE0 /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC3554272FBED000BA9FE0 /* ProductListCell.swift */; };
 		0ACC3558272FC8DF00BA9FE0 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC3557272FC8DF00BA9FE0 /* RootView.swift */; };
 		0ACC355A272FC90500BA9FE0 /* RootFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC3559272FC90500BA9FE0 /* RootFeature.swift */; };
+		0ACC355C273007FE00BA9FE0 /* ProductsListReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC355B273007FE00BA9FE0 /* ProductsListReducerTests.swift */; };
+		0ACC355F273012B400BA9FE0 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 0ACC355E273012B400BA9FE0 /* SnapshotTesting */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +49,6 @@
 		0ACC351C272F94D700BA9FE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0ACC351F272F94D700BA9FE0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0ACC3525272F94D800BA9FE0 /* adidas-challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "adidas-challengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0ACC3529272F94D800BA9FE0 /* adidas_challengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adidas_challengeTests.swift; sourceTree = "<group>"; };
 		0ACC352F272F94D800BA9FE0 /* adidas-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "adidas-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ACC3533272F94D800BA9FE0 /* adidas_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adidas_challengeUITests.swift; sourceTree = "<group>"; };
 		0ACC3535272F94D800BA9FE0 /* adidas_challengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adidas_challengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -61,6 +61,7 @@
 		0ACC3554272FBED000BA9FE0 /* ProductListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
 		0ACC3557272FC8DF00BA9FE0 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		0ACC3559272FC90500BA9FE0 /* RootFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootFeature.swift; sourceTree = "<group>"; };
+		0ACC355B273007FE00BA9FE0 /* ProductsListReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListReducerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ACC355F273012B400BA9FE0 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,7 +135,7 @@
 		0ACC3528272F94D800BA9FE0 /* adidas-challengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				0ACC3529272F94D800BA9FE0 /* adidas_challengeTests.swift */,
+				0ACC355B273007FE00BA9FE0 /* ProductsListReducerTests.swift */,
 			);
 			path = "adidas-challengeTests";
 			sourceTree = "<group>";
@@ -222,6 +224,9 @@
 				0ACC3527272F94D800BA9FE0 /* PBXTargetDependency */,
 			);
 			name = "adidas-challengeTests";
+			packageProductDependencies = (
+				0ACC355E273012B400BA9FE0 /* SnapshotTesting */,
+			);
 			productName = "adidas-challengeTests";
 			productReference = 0ACC3525272F94D800BA9FE0 /* adidas-challengeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -278,6 +283,7 @@
 			mainGroup = 0ACC350C272F94D400BA9FE0;
 			packageReferences = (
 				0ACC3542272F976000BA9FE0 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				0ACC355D273012B400BA9FE0 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = 0ACC3516272F94D400BA9FE0 /* Products */;
 			projectDirPath = "";
@@ -338,7 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0ACC352A272F94D800BA9FE0 /* adidas_challengeTests.swift in Sources */,
+				0ACC355C273007FE00BA9FE0 /* ProductsListReducerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -689,6 +695,14 @@
 				minimumVersion = 0.9.0;
 			};
 		};
+		0ACC355D273012B400BA9FE0 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -696,6 +710,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0ACC3542272F976000BA9FE0 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		0ACC355E273012B400BA9FE0 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0ACC355D273012B400BA9FE0 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

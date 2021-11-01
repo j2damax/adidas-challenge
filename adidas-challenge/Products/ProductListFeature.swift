@@ -13,7 +13,7 @@ struct ProductListEnvironment {
   var productListRequest: (JSONDecoder) -> Effect<[ProductListModel], APIError>
 }
 
-let productReducer = Reducer<
+let productListReducer = Reducer<
     ProductListState,
     ProductListAction,
   SystemEnvironment<ProductListEnvironment>

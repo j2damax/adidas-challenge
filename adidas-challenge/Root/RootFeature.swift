@@ -15,7 +15,7 @@ let rootReducer = Reducer<
     RootAction,
     SystemEnvironment<RootEnvironment>
 >.combine(
-    productReducer.pullback(
+    productListReducer.pullback(
         state: \.productListState,
         action: /RootAction.productListAction,
         environment: { _ in .live(environment: ProductListEnvironment(productListRequest: productListEffect)) }))
