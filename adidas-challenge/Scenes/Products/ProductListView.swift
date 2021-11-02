@@ -8,22 +8,19 @@ struct ProductListView: View {
     var body: some View {
         WithViewStore(self.store) { viewStore in
             NavigationView {
-                if true {
-                    List {
-                        ForEach(viewStore.state.productListModel) { productModel in
-                            NavigationLink {
-                                //ItemDetails()
-                            } label: {
-                                ProductsListCell(data: productModel)
-                            }
+                List {
+                    ForEach(viewStore.state.productListModel) { productModel in
+                        NavigationLink {
+                        } label: {
+                            ProductsListCell(data: productModel)
+                                .listRowSeparator(.hidden)
                         }
-                        //.searchable(text: $searchText)
                     }
-                    .listStyle(.grouped)
-                } else {
-                    Text("error view")
+                    //.searchable(text: $searchText)
                 }
-                Text("Select an item")
+                .listStyle(.grouped)
+                .overlay(LoadingView(isLoading: viewStore.isLoading))
+                .navigationBarHidden(true)
             }
             .onAppear {
                 viewStore.send(.onAppear)
