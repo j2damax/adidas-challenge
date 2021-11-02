@@ -4,23 +4,34 @@ import ComposableArchitecture
 struct ProductListView: View {
     
     let store: Store<ProductListState, ProductListAction>
-    
+    @State private var searchText = ""
+
     var body: some View {
         WithViewStore(self.store) { viewStore in
             NavigationView {
-                List {
-                    ForEach(viewStore.state.productListModel) { productModel in
-                        NavigationLink {
-                        } label: {
-                            ProductsListCell(data: productModel)
-                                .listRowSeparator(.hidden)
+                VStack {
+                    SearchBar(
+                        text: viewStore.binding(
+                            get: { $0.searchText },
+                            send: { .updateSearchText($0) }
+                        )
+                    )
+                    List {
+                        let productRows = getProductRowsData(for: viewStore)
+                        ForEach(productRows) { productModel in
+                            NavigationLink {
+                            } label: {
+                                ProductsListCell(data: productModel)
+                                    .listRowSeparator(.hidden)
+                            }
                         }
                     }
-                    //.searchable(text: $searchText)
+                    .simultaneousGesture(DragGesture().onChanged({ _ in
+                        UIApplication.shared.endEditing()
+                    }))
                 }
-                .listStyle(.grouped)
                 .overlay(LoadingView(isLoading: viewStore.isLoading))
-                .navigationBarHidden(true)
+                .navigationBarTitle("adidas")
             }
             .onAppear {
                 viewStore.send(.onAppear)
@@ -28,6 +39,13 @@ struct ProductListView: View {
         }
     }
     
+    private func getProductRowsData(for viewStore: ViewStore<ProductListState, ProductListAction>) -> [ProductListState.ProductRow] {
+        var productRows = viewStore.products
+        if viewStore.isFiltering {
+            productRows = viewStore.filtered
+        }
+        return productRows
+    }
 }
 
 struct ProductListView_Previews: PreviewProvider {

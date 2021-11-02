@@ -16,6 +16,8 @@
 		0AB1E27427314A8E000090CB /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB1E27327314A8E000090CB /* LoadingView.swift */; };
 		0AB1E2772731537A000090CB /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB1E2762731537A000090CB /* AsyncImageView.swift */; };
 		0AB1E27A273154A0000090CB /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB1E279273154A0000090CB /* CurrencyFormatter.swift */; };
+		0AB1E27C27315E3D000090CB /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB1E27B27315E3D000090CB /* SearchBar.swift */; };
+		0AB1E27E27316C83000090CB /* Extension+UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB1E27D27316C83000090CB /* Extension+UIApplication.swift */; };
 		0ACC3519272F94D400BA9FE0 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC3518272F94D400BA9FE0 /* AppMain.swift */; };
 		0ACC351D272F94D700BA9FE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ACC351C272F94D700BA9FE0 /* Assets.xcassets */; };
 		0ACC3520272F94D700BA9FE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ACC351F272F94D700BA9FE0 /* Preview Assets.xcassets */; };
@@ -54,6 +56,8 @@
 		0AB1E27327314A8E000090CB /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		0AB1E2762731537A000090CB /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		0AB1E279273154A0000090CB /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
+		0AB1E27B27315E3D000090CB /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		0AB1E27D27316C83000090CB /* Extension+UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIApplication.swift"; sourceTree = "<group>"; };
 		0ACC3515272F94D400BA9FE0 /* adidas-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "adidas-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ACC3518272F94D400BA9FE0 /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
 		0ACC351C272F94D700BA9FE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,7 +108,6 @@
 		0AB1E26B27314931000090CB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				0AB1E26C2731494F000090CB /* Extension+View.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -112,17 +115,20 @@
 		0AB1E26E273149F5000090CB /* CoreUI */ = {
 			isa = PBXGroup;
 			children = (
-				0AB1E26F27314A03000090CB /* ViewModifiers */,
+				0AB1E26F27314A03000090CB /* Components */,
 			);
 			path = CoreUI;
 			sourceTree = "<group>";
 		};
-		0AB1E26F27314A03000090CB /* ViewModifiers */ = {
+		0AB1E26F27314A03000090CB /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				0AB1E27027314A19000090CB /* Shimmer.swift */,
+				0AB1E27B27315E3D000090CB /* SearchBar.swift */,
+				0AB1E26C2731494F000090CB /* Extension+View.swift */,
+				0AB1E27D27316C83000090CB /* Extension+UIApplication.swift */,
 			);
-			path = ViewModifiers;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		0AB1E27227314A79000090CB /* Loading */ = {
@@ -391,8 +397,10 @@
 				0ACC3549272FB4A200BA9FE0 /* ProductListView.swift in Sources */,
 				0ACC354D272FB4CB00BA9FE0 /* Product.swift in Sources */,
 				0ACC3555272FBED000BA9FE0 /* ProductListCell.swift in Sources */,
+				0AB1E27E27316C83000090CB /* Extension+UIApplication.swift in Sources */,
 				0AB1E27127314A19000090CB /* Shimmer.swift in Sources */,
 				0ACC3566273013E900BA9FE0 /* ProductDetailsEffects.swift in Sources */,
+				0AB1E27C27315E3D000090CB /* SearchBar.swift in Sources */,
 				0ACC3564273013AA00BA9FE0 /* ProductDetailsView.swift in Sources */,
 				0ACC354B272FB4BC00BA9FE0 /* ProductEffects.swift in Sources */,
 				0ACC3552272FB7EA00BA9FE0 /* SystemEnvironment.swift in Sources */,

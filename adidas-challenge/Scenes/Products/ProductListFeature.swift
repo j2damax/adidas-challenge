@@ -1,8 +1,11 @@
 import ComposableArchitecture
 
 struct ProductListState: Equatable {
-    var productListModel: [ProductRow] = [ProductRow]()
+    var products: [ProductRow] = [ProductRow]()
+    var filtered: [ProductRow] = [ProductRow]()
     var isLoading = false
+    var searchText: String = ""
+    var isFiltering: Bool { searchText.count > 0 }
     
     struct ProductRow: Identifiable, Equatable {
         let id: String
@@ -11,12 +14,14 @@ struct ProductListState: Equatable {
         let price: String
         let imageURL: String?
     }
-
+    
 }
 
 enum ProductListAction: Equatable {
     case onAppear
     case dataLoaded(Result<[Product], APIError>)
+    case updateSearchText(String)
+    case searchProductsByText(String)
 }
 
 struct ProductListEnvironment {
@@ -40,7 +45,7 @@ let productListReducer = Reducer<
         state.isLoading = false
         switch result {
         case .success(let products):
-            state.productListModel = products.map { product in
+            state.products = products.map { product in
                     .init(
                         id: product.id,
                         name: product.name,
@@ -48,10 +53,26 @@ let productListReducer = Reducer<
                         price: environment.currencyFormatter.format(product.price ?? 0.00, currencyCode: product.currency ?? "EUR"),
                         imageURL:product.imgUrl
                     )
-                }
+            }
         case .failure:
             break
         }
+        return .none
+    case let .updateSearchText(text):
+        state.searchText = text
+        guard text.count >= 1 else {
+            return .none
+        }
+        return .init(value: .searchProductsByText(text))
+    case let .searchProductsByText(text):
+        let cleanFilter = text.lowercased()
+        let filterResult = state
+            .products
+            .filter {
+                $0.description.lowercased().contains(cleanFilter) ||
+                $0.name.lowercased().contains(cleanFilter)
+            }
+        state.filtered = filterResult.isEmpty ? [ProductListState.ProductRow]() : filterResult
         return .none
     }
 }

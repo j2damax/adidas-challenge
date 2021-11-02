@@ -3,9 +3,7 @@ import SwiftUI
 struct ProductsListCell: View {
     private let data: ProductListState.ProductRow
 
-    init(
-        data: ProductListState.ProductRow
-    ) {
+    init( data: ProductListState.ProductRow) {
         self.data = data
     }
 
