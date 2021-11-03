@@ -1,15 +1,12 @@
 # adidas challenge
 
-This is a big opportunity to restart my carrer to the next level and thinking of giving my best attempt and I decided to take a real challenege completing this assesment using `The Composable Architecture`. This is the first time i'm using the The Composable Architecture in a project and with my prior experince working with MVVM, MVP architecture patterns was able to understand and implement this architecture in a very short period time with rest of the day to day work during last 3 days. Please let me present my solution.
+This is a big opportunity to relaunch my career to the next level and thinking of giving my best attempt and I decided to take a real challenge completing this assessment using `The Composable Architecture`. This is the first time i'm using the The Composable Architecture in a project and with my prior experince working with MVVM, MVP architecture patterns was able to understand and implement this architecture in a very short period time with rest of the day to day work during last 3 days. Please let me present my solution.  I have done some reference from pointfree, raywenderlich and few public git repositraies to understand TCA.
 
 Here we go;
 
 ## Pre requisites
 - Xcode 13.0
-- Setup API: 
-    - Install Docker
-    - git clone https://github.com/jayampathyb/interview-test
-    - docker-compose up
+- Docker
 
 ## Setting up
 - Clone the respositary from `https://github.com/j2damax/adidas-challenge.git`
@@ -37,11 +34,12 @@ I felt love with this architecture how we can isolate each feature build without
 
 
 ## Components of Solution
- .
-    ├── Repositary      # Model classes
-    ├── Scenes          # The main feature modules
-    ├── Core            # Core components that can be used across the application
-    └── Utils		    # Helper or utility features to make dev life a bit more easy
+
+    .Main
+        ├── Repositary      # Model classes
+        ├── Scenes          # The main feature modules
+        ├── Core            # Core components that can be used across the application
+        └── Utils		    # Helper or utility features to make dev life a bit more easy
 
 
         .Scenes
@@ -78,6 +76,10 @@ I felt love with this architecture how we can isolate each feature build without
 - Error handling (Network and other)
 - Couldn't handle app crashes
 - Couldn't create more meaningful tests
+- Localization 
+- Swift code formatting
+- Restructure views into more structured way using smaller views
+
 
 
 ## Screen Recording 
@@ -96,4 +98,5 @@ https://drive.google.com/drive/folders/1RHhMTERZdzTWtqWcD61YBYveoq5b86vy?usp=sha
 
 ![Alt text](/screenshots/product-add-review.png?raw=true "Add Review")
 
-## Code Walkthrough
+## Last words
+I'm really happy that I took this challenege :) Cheers! - Jam
