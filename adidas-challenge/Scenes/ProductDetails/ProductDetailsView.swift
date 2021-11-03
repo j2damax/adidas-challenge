@@ -46,7 +46,8 @@ struct ProductDetailsView: View {
             }
             .padding()
             .popover(isPresented: $addAReview) {
-                ReviewView()
+                let env = SystemEnvironment.live(environment: ProductAddReviewEnvironment(addProductReviewRequest: addProductReviewEffect))
+                ProductAddReviewView(store: Store(initialState: ProductAddReviewState(product: product), reducer: productAddReviewReducer, environment: env))
             }
             .onAppear {
                 viewStore.send(.fetchProductData(productId: product.id))
