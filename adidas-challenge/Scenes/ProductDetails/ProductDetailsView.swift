@@ -32,11 +32,17 @@ struct ProductDetailsView: View {
                         }
                         Text(product.description)
                         let reviews = viewStore.reviews
-                        ForEach(reviews) { review in
-                            Text(review.text ?? "")
+                        
+                        VStack(alignment: .leading, spacing: 4) {
+                            ForEach(reviews) { review in
+                                ZStack(alignment: .leading) {
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .fill(Color.gray.opacity(0.1))
+                                    Text(review.text ?? "")
+                                        .padding(8)
+                                }
+                            }
                         }
-                        .cornerRadius(20)
-                        .frame(height: 200)
                     }
                 }
                 VStack {
