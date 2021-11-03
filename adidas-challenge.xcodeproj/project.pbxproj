@@ -18,8 +18,10 @@
 		0AB1E27A273154A0000090CB /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB1E279273154A0000090CB /* CurrencyFormatter.swift */; };
 		0AB1E27C27315E3D000090CB /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB1E27B27315E3D000090CB /* SearchBar.swift */; };
 		0AB1E27E27316C83000090CB /* Extension+UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB1E27D27316C83000090CB /* Extension+UIApplication.swift */; };
-		0AB1E28427320B46000090CB /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB1E28327320B46000090CB /* ReviewView.swift */; };
+		0AB1E28427320B46000090CB /* ProductAddReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB1E28327320B46000090CB /* ProductAddReviewView.swift */; };
 		0AB1E28727320BA0000090CB /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB1E28627320BA0000090CB /* RatingView.swift */; };
+		0AB1E28927325D98000090CB /* ProductAddReviewFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB1E28827325D98000090CB /* ProductAddReviewFeature.swift */; };
+		0AB1E28B27325DBF000090CB /* ProductAddReviewEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB1E28A27325DBF000090CB /* ProductAddReviewEffects.swift */; };
 		0ACC3519272F94D400BA9FE0 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC3518272F94D400BA9FE0 /* AppMain.swift */; };
 		0ACC351D272F94D700BA9FE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ACC351C272F94D700BA9FE0 /* Assets.xcassets */; };
 		0ACC3520272F94D700BA9FE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ACC351F272F94D700BA9FE0 /* Preview Assets.xcassets */; };
@@ -60,8 +62,10 @@
 		0AB1E279273154A0000090CB /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		0AB1E27B27315E3D000090CB /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		0AB1E27D27316C83000090CB /* Extension+UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIApplication.swift"; sourceTree = "<group>"; };
-		0AB1E28327320B46000090CB /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
+		0AB1E28327320B46000090CB /* ProductAddReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAddReviewView.swift; sourceTree = "<group>"; };
 		0AB1E28627320BA0000090CB /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		0AB1E28827325D98000090CB /* ProductAddReviewFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAddReviewFeature.swift; sourceTree = "<group>"; };
+		0AB1E28A27325DBF000090CB /* ProductAddReviewEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAddReviewEffects.swift; sourceTree = "<group>"; };
 		0ACC3515272F94D400BA9FE0 /* adidas-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "adidas-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ACC3518272F94D400BA9FE0 /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
 		0ACC351C272F94D700BA9FE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 				0AB1E2762731537A000090CB /* AsyncImageView.swift */,
 				0AB1E27027314A19000090CB /* Shimmer.swift */,
 				0AB1E27B27315E3D000090CB /* SearchBar.swift */,
+				0AB1E28627320BA0000090CB /* RatingView.swift */,
 				0AB1E26C2731494F000090CB /* Extension+View.swift */,
 				0AB1E27D27316C83000090CB /* Extension+UIApplication.swift */,
 			);
@@ -148,17 +153,11 @@
 		0AB1E28227320B3C000090CB /* Review */ = {
 			isa = PBXGroup;
 			children = (
-				0AB1E28327320B46000090CB /* ReviewView.swift */,
+				0AB1E28827325D98000090CB /* ProductAddReviewFeature.swift */,
+				0AB1E28327320B46000090CB /* ProductAddReviewView.swift */,
+				0AB1E28A27325DBF000090CB /* ProductAddReviewEffects.swift */,
 			);
 			path = Review;
-			sourceTree = "<group>";
-		};
-		0AB1E28527320B84000090CB /* Rating */ = {
-			isa = PBXGroup;
-			children = (
-				0AB1E28627320BA0000090CB /* RatingView.swift */,
-			);
-			path = Rating;
 			sourceTree = "<group>";
 		};
 		0ACC350C272F94D400BA9FE0 = {
@@ -184,11 +183,11 @@
 			children = (
 				0AA46377273144E100179405 /* Info.plist */,
 				0ACC3518272F94D400BA9FE0 /* AppMain.swift */,
+				0AB1E26A27314929000090CB /* Utils */,
+				0ACC354E272FB7B900BA9FE0 /* Shared */,
 				0AB1E26E273149F5000090CB /* CoreUI */,
 				0ACC356B27301DE300BA9FE0 /* Repository */,
 				0ACC356E27301E2D00BA9FE0 /* Scenes */,
-				0ACC354E272FB7B900BA9FE0 /* Shared */,
-				0AB1E26A27314929000090CB /* Utils */,
 				0ACC351C272F94D700BA9FE0 /* Assets.xcassets */,
 				0ACC351E272F94D700BA9FE0 /* Preview Content */,
 				0AA463752731422A00179405 /* Launch Screen.storyboard */,
@@ -207,7 +206,7 @@
 		0ACC3545272FB3E700BA9FE0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0ACC3553272FBE8000BA9FE0 /* ViewComponents */,
+				0ACC3553272FBE8000BA9FE0 /* Components */,
 				0ACC3546272FB42B00BA9FE0 /* ProductListFeature.swift */,
 				0ACC3548272FB4A200BA9FE0 /* ProductListView.swift */,
 				0ACC354A272FB4BC00BA9FE0 /* ProductEffects.swift */,
@@ -224,12 +223,12 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
-		0ACC3553272FBE8000BA9FE0 /* ViewComponents */ = {
+		0ACC3553272FBE8000BA9FE0 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				0ACC3554272FBED000BA9FE0 /* ProductListCell.swift */,
 			);
-			path = ViewComponents;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		0ACC35602730135400BA9FE0 /* ProductDetails */ = {
@@ -273,7 +272,6 @@
 				0ACC3545272FB3E700BA9FE0 /* Products */,
 				0ACC35602730135400BA9FE0 /* ProductDetails */,
 				0AB1E28227320B3C000090CB /* Review */,
-				0AB1E28527320B84000090CB /* Rating */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -400,7 +398,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AB1E28427320B46000090CB /* ReviewView.swift in Sources */,
+				0AB1E28427320B46000090CB /* ProductAddReviewView.swift in Sources */,
 				0ACC3549272FB4A200BA9FE0 /* ProductListView.swift in Sources */,
 				0ACC354D272FB4CB00BA9FE0 /* Product.swift in Sources */,
 				0ACC3555272FBED000BA9FE0 /* ProductListCell.swift in Sources */,
@@ -418,9 +416,11 @@
 				0AB1E2772731537A000090CB /* AsyncImageView.swift in Sources */,
 				0ACC3547272FB42B00BA9FE0 /* ProductListFeature.swift in Sources */,
 				0ACC35622730139000BA9FE0 /* ProductDetailsFeature.swift in Sources */,
+				0AB1E28927325D98000090CB /* ProductAddReviewFeature.swift in Sources */,
 				0AB1E27A273154A0000090CB /* CurrencyFormatter.swift in Sources */,
 				0AB1E26D2731494F000090CB /* Extension+View.swift in Sources */,
 				0ACC3550272FB7CE00BA9FE0 /* APIError.swift in Sources */,
+				0AB1E28B27325DBF000090CB /* ProductAddReviewEffects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

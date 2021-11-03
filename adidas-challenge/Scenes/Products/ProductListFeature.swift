@@ -54,7 +54,8 @@ let productListReducer = Reducer<
                     )
             }
         case .failure:
-            break
+            // MARK: TO DO:Need to handle the error state
+            print("error")
         }
         return .none
     case let .updateSearchText(text):
