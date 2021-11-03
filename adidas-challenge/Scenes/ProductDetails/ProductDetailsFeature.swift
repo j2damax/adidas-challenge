@@ -8,9 +8,9 @@ struct ProductDetailsState: Equatable {
 }
 
 enum ProductDetailsAction: Equatable {
-    case fetchProductData
+    case fetchProductData(productId: String)
     case productDataLoaded(Result<Product, APIError>)
-    case fetchProductReviews
+    case fetchProductReviews(productId: String)
     case reviewsDataLoaded(Result<[Review], APIError>)
     case addProductReviews
 }
@@ -18,14 +18,14 @@ enum ProductDetailsAction: Equatable {
 struct ProductDetailsEnvironment {
     var currencyFormatter = CurrencyFormatter()
     var productDetailRequest: (String, JSONDecoder) -> Effect<Product, APIError>
-    //var productReviewsRequest: (JSONDecoder) -> Effect<[Review], APIError>
+    var productReviewsRequest: (String, JSONDecoder) -> Effect<[Review], APIError>
 }
 
 let productDetailsReducer = Reducer<ProductDetailsState, ProductDetailsAction, SystemEnvironment<ProductDetailsEnvironment>> { state, action, environment in
 
     switch action {
-    case .fetchProductData:
-        return environment.productDetailRequest("", environment.decoder())
+    case .fetchProductData(let productId):
+        return environment.productDetailRequest(productId, environment.decoder())
             .receive(on: environment.mainQueue())
             .catchToEffect()
             .map(ProductDetailsAction.productDataLoaded)
@@ -43,12 +43,11 @@ let productDetailsReducer = Reducer<ProductDetailsState, ProductDetailsAction, S
             break
         }
         return .none
-    case .fetchProductReviews:
-        /*return environment.productReviewsRequest(environment.decoder())
+    case .fetchProductReviews(let productId):
+        return environment.productReviewsRequest(productId, environment.decoder())
             .receive(on: environment.mainQueue())
             .catchToEffect()
-            .map(ProductDetailsAction.reviewsDataLoaded)*/
-        return .none
+            .map(ProductDetailsAction.reviewsDataLoaded)
     case .reviewsDataLoaded(let result):
         switch result {
         case .success(let reviews):

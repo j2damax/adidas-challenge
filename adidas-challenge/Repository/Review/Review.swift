@@ -1,11 +1,17 @@
 import Foundation
 
 struct Review: Decodable, Equatable {
-    let productId: String
-    let rating: Double
-    let text: String
+    let productID: String
+    let rating: Double?
+    let text: String?
+
+    enum CodingKeys: String, CodingKey {
+        case text, rating
+        case productID = "productId"
+    }
 }
 
 extension Review: Identifiable {
-    var id: String { productId }
+    var id: String { productID }
 }
+

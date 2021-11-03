@@ -23,12 +23,13 @@ struct ProductListView: View {
                         let productRows = getProductRowsData(for: viewStore)
                         ForEach(productRows) { productModel in
                             NavigationLink {
-                                let env = SystemEnvironment.live(environment: ProductDetailsEnvironment(productDetailRequest: productDetailsEffect))
+                                let env = SystemEnvironment.live(environment: ProductDetailsEnvironment(productDetailRequest: productDetailsEffect, productReviewsRequest: productReviewsEffect))
                                 ProductDetailsView(store: Store(initialState: ProductDetailsState(product: productModel), reducer: productDetailsReducer, environment: env))
                             } label: {
                                 ProductsListCell(data: productModel)
                                     .listRowSeparator(.hidden)
                             }
+                            .navigationBarTitle("")
                         }
                     }
                     .simultaneousGesture(DragGesture().onChanged({ _ in

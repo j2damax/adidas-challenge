@@ -7,8 +7,7 @@ func productDetailsEffect(productId: String, decoder: JSONDecoder) -> Effect<Pro
     }
     return URLSession.shared.dataTaskPublisher(for: url)
         .mapError { _ in APIError.downloadError }
-        .map { data, _ in data
-        }
+        .map { data, _ in data }
         .decode(type: Product.self, decoder: decoder)
         .mapError { _ in APIError.decodingError }
         .eraseToEffect()
@@ -29,20 +28,19 @@ func productReviewsEffect(productId: String, decoder: JSONDecoder) -> Effect<[Re
     guard let url = URL(string: "http://localhost:3002/reviews/\(productId)") else {
         fatalError("Error on creating url")
     }
+
     return URLSession.shared.dataTaskPublisher(for: url)
         .mapError { _ in APIError.downloadError }
-        .map { data, _ in data
-        }
+        .map { data, _ in data }
         .decode(type: [Review].self, decoder: decoder)
         .mapError { _ in APIError.decodingError }
         .eraseToEffect()
 }
 
 func dummyProductReviewsEffect(decoder: JSONDecoder) -> Effect<[Review], APIError> {
-    let dummyReview = [Review(
-        productId: "HI351",
-        rating: 1.0,
-        text: "Hello")]
+    
+    
+    let dummyReview = [Review(productID: "", rating: 0.0, text: "")]
     return Effect(value: dummyReview)
 }
 

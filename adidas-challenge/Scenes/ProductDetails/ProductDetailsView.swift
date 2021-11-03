@@ -31,8 +31,9 @@ struct ProductDetailsView: View {
                             
                         }
                         Text(product.description)
-                        List(0 ..< 5) { item in
-                            Text("Review \(item)")
+                        let reviews = viewStore.reviews
+                        ForEach(reviews) { review in
+                            Text(review.text ?? "")
                         }
                         .cornerRadius(20)
                         .frame(height: 200)
@@ -48,8 +49,8 @@ struct ProductDetailsView: View {
                 ReviewView()
             }
             .onAppear {
-                viewStore.send(.fetchProductData)
-                viewStore.send(.fetchProductReviews)
+                viewStore.send(.fetchProductData(productId: product.id))
+                viewStore.send(.fetchProductReviews(productId: product.id))
             }
         }
     }
