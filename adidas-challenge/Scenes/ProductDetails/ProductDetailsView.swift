@@ -4,7 +4,7 @@ import ComposableArchitecture
 struct ProductDetailsView: View {
     
     let store: Store<ProductDetailsState, ProductDetailsAction>
-    @State private var addAReview = false
+    @State private var showRateViewPresented = false
     
     var body: some View {
         WithViewStore(self.store) { viewStore in
@@ -41,13 +41,25 @@ struct ProductDetailsView: View {
                 }
                 VStack {
                     Spacer()
-                    AppButton(buttonTapped: $addAReview)
+                    Button {
+                        showRateViewPresented = true
+                    } label: {
+                        Spacer()
+                        Text("Add review")
+                            .padding(20)
+                        Spacer()
+                    }
+                    .background {
+                        Color.orange.opacity(0.8)
+                    }
+                    .cornerRadius(10)
                 }
             }
             .padding()
-            .popover(isPresented: $addAReview) {
+            .popover(isPresented: $showRateViewPresented) {
                 let env = SystemEnvironment.live(environment: ProductAddReviewEnvironment(addProductReviewRequest: addProductReviewEffect))
-                ProductAddReviewView(store: Store(initialState: ProductAddReviewState(product: product), reducer: productAddReviewReducer, environment: env))
+                
+                ProductAddReviewView(showRateViewPresented: $showRateViewPresented, store: Store(initialState: ProductAddReviewState(product: product), reducer: productAddReviewReducer, environment: env))
             }
             .onAppear {
                 viewStore.send(.fetchProductData(productId: product.id))

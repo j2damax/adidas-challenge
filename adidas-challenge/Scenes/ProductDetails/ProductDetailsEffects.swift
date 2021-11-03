@@ -38,9 +38,7 @@ func productReviewsEffect(productId: String, decoder: JSONDecoder) -> Effect<[Re
 }
 
 func dummyProductReviewsEffect(decoder: JSONDecoder) -> Effect<[Review], APIError> {
-    
-    
-    let dummyReview = [Review(productID: "", rating: 0.0, text: "")]
+    let dummyReview = [Review(productID: "123", rating: 1.0, text: "hello")]
     return Effect(value: dummyReview)
 }
 

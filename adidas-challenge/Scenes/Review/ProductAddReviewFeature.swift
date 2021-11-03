@@ -4,11 +4,14 @@ import ComposableArchitecture
 struct ProductAddReviewState: Equatable {
     var product: ProductRow
     var review: Review? = nil
+    var alert: AlertState<ProductAddReviewAction>?
+    var reviewCompleted: Bool = false
 }
 
 enum ProductAddReviewAction: Equatable {
     case addProductReview(productId: String, rating: Int, review: String)
-    case reviewDataLoaded(Result<Review, APIError>)
+    case reviewCompleted(Result<Review, APIError>)
+    case alertDismissed
 }
 
 struct ProductAddReviewEnvironment {
@@ -29,14 +32,26 @@ let productAddReviewReducer = Reducer<ProductAddReviewState, ProductAddReviewAct
         return environment.addProductReviewRequest(productId, params, environment.decoder())
             .receive(on: environment.mainQueue())
             .catchToEffect()
-            .map(ProductAddReviewAction.reviewDataLoaded)
-    case .reviewDataLoaded(let result):
+            .map(ProductAddReviewAction.reviewCompleted)
+    case .reviewCompleted(let result):
         switch result {
         case .success(let review):
             state.review = review
+            state.alert = .init(
+                title: TextState("Review"),
+                message: TextState("Success")
+            )
         case .failure:
-            break
+            state.alert = .init(
+                title: TextState("Review"),
+                message: TextState("Fail")
+            )
         }
+        return .none
+        
+    case .alertDismissed:
+        state.alert = nil
+        state.reviewCompleted = true
         return .none
     }
 }
