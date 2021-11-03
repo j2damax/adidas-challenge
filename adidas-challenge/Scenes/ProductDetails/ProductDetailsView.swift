@@ -25,6 +25,7 @@ struct ProductDetailsView: View {
                             VStack(alignment: .leading) {
                                 HStack {
                                     Text(product.price)
+                                    .bold()
                                 }
                             }
                             Spacer()
@@ -33,13 +34,14 @@ struct ProductDetailsView: View {
                         Text(product.description)
                         let reviews = viewStore.reviews
                         
-                        VStack(alignment: .leading, spacing: 4) {
+                        VStack(alignment: .leading, spacing: 2) {
                             ForEach(reviews) { review in
-                                ZStack(alignment: .leading) {
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .fill(Color.gray.opacity(0.1))
+                                VStack(alignment: .leading) {
                                     Text(review.text ?? "")
-                                        .padding(8)
+                                        .font(.body)
+                                        .italic()
+                                        .foregroundColor(Color.black.opacity(0.6))
+                                        .padding([.top, .bottom], 5)
                                 }
                             }
                         }
