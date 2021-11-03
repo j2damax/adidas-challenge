@@ -1,20 +1,19 @@
 import ComposableArchitecture
 
+struct ProductRow: Identifiable, Equatable {
+    let id: String
+    let name: String
+    let description: String
+    let price: String
+    let imageURL: String?
+}
+
 struct ProductListState: Equatable {
     var products: [ProductRow] = [ProductRow]()
     var filtered: [ProductRow] = [ProductRow]()
     var isLoading = false
     var searchText: String = ""
     var isFiltering: Bool { searchText.count > 0 }
-    
-    struct ProductRow: Identifiable, Equatable {
-        let id: String
-        let name: String
-        let description: String
-        let price: String
-        let imageURL: String?
-    }
-    
 }
 
 enum ProductListAction: Equatable {
@@ -48,7 +47,7 @@ let productListReducer = Reducer<
             state.products = products.map { product in
                     .init(
                         id: product.id,
-                        name: product.name,
+                        name: product.name.capitalized,
                         description: product.description ?? "",
                         price: environment.currencyFormatter.format(product.price ?? 0.00, currencyCode: product.currency ?? "EUR"),
                         imageURL:product.imgUrl
@@ -72,7 +71,7 @@ let productListReducer = Reducer<
                 $0.description.lowercased().contains(cleanFilter) ||
                 $0.name.lowercased().contains(cleanFilter)
             }
-        state.filtered = filterResult.isEmpty ? [ProductListState.ProductRow]() : filterResult
+        state.filtered = filterResult.isEmpty ? [ProductRow]() : filterResult
         return .none
     }
 }

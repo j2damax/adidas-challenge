@@ -4,8 +4,11 @@ import ComposableArchitecture
 struct ProductListView: View {
     
     let store: Store<ProductListState, ProductListAction>
+   
     @State private var searchText = ""
-
+    
+    @State private var hasTimeElapsed = false
+    
     var body: some View {
         WithViewStore(self.store) { viewStore in
             NavigationView {
@@ -20,6 +23,8 @@ struct ProductListView: View {
                         let productRows = getProductRowsData(for: viewStore)
                         ForEach(productRows) { productModel in
                             NavigationLink {
+                                let env = SystemEnvironment.live(environment: ProductDetailsEnvironment(productDetailRequest: productDetailsEffect))
+                                ProductDetailsView(store: Store(initialState: ProductDetailsState(product: productModel), reducer: productDetailsReducer, environment: env))
                             } label: {
                                 ProductsListCell(data: productModel)
                                     .listRowSeparator(.hidden)
@@ -39,7 +44,13 @@ struct ProductListView: View {
         }
     }
     
-    private func getProductRowsData(for viewStore: ViewStore<ProductListState, ProductListAction>) -> [ProductListState.ProductRow] {
+    private func delay() async {
+        // Delay 1 second = 1_000_000_000 nanoseconds)
+        await Task.sleep(1_000_000_000)
+        hasTimeElapsed = true
+    }
+    
+    private func getProductRowsData(for viewStore: ViewStore<ProductListState, ProductListAction>) -> [ProductRow] {
         var productRows = viewStore.products
         if viewStore.isFiltering {
             productRows = viewStore.filtered

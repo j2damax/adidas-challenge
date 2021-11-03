@@ -5,11 +5,12 @@ import ComposableArchitecture
 struct AppMain: App {
     var body: some Scene {
         WindowGroup {
+            let env = SystemEnvironment.live(environment: ProductListEnvironment(productListRequest: productListEffect))
             ProductListView(
                 store: Store(
                     initialState: ProductListState(),
                     reducer: productListReducer,
-                    environment: .live(environment: ProductListEnvironment(productListRequest: productListEffect))))
+                    environment: env))
         }
     }
 }

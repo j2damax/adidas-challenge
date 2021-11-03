@@ -13,7 +13,7 @@ struct AsyncImageView: View {
             case .success(let image):
                 image
                     .resizable()
-                    .scaledToFill()
+                    .scaledToFit()
 
             case .failure(_):
                 Image(systemName: "exclamationmark.icloud")

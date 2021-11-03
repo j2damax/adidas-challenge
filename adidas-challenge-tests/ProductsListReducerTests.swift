@@ -6,8 +6,9 @@ import ComposableArchitecture
 class ProductsListReducerTests: XCTestCase {
     
     let testScheduler = DispatchQueue.test
+    var currencyFormatter = CurrencyFormatter()
     
-    var testProductList: [Product] {
+    var testProducts: [Product] {
       [
         Product(
             id: "1",
@@ -28,10 +29,21 @@ class ProductsListReducerTests: XCTestCase {
                 mainQueue: { self.testScheduler.eraseToAnyScheduler() },
                 decoder: { JSONDecoder() }))
         
-        store.send(.onAppear)
+        store.send(.onAppear) { state in
+            state.isLoading = true
+        }
         testScheduler.advance()
-        store.receive(.dataLoaded(.success(testProductList))) { state in
-            state.productListModel = self.testProductList
+        store.receive(.dataLoaded(.success(testProducts))) { state in
+            state.isLoading = false
+            state.products = self.testProducts.map { product in
+                    .init(
+                        id: product.id,
+                        name: product.name.capitalized,
+                        description: product.description ?? "",
+                        price: self.currencyFormatter.format(product.price ?? 0.00, currencyCode: product.currency ?? "EUR"),
+                        imageURL:product.imgUrl
+                    )
+            }
         }
     }
 }

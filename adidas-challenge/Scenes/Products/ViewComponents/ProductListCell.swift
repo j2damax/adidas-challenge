@@ -1,9 +1,9 @@
 import SwiftUI
 
 struct ProductsListCell: View {
-    private let data: ProductListState.ProductRow
+    private let data: ProductRow
 
-    init( data: ProductListState.ProductRow) {
+    init( data: ProductRow) {
         self.data = data
     }
 
@@ -27,7 +27,7 @@ struct ProductsListCell: View {
 
 struct ProductsListCell_Previews: PreviewProvider {
     static var previews: some View {
-        let dummyProduct = ProductListState.ProductRow(
+        let dummyProduct = ProductRow(
             id: "1",
             name: "Dummy Product",
             description: "This is a dummy product without any real information",
